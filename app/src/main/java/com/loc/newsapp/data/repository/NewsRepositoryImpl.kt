@@ -9,7 +9,7 @@ import com.loc.newsapp.domain.model.Article
 import com.loc.newsapp.domain.repository.NewsRepository
 import kotlinx.coroutines.flow.Flow
 
-class NewsRepository(private val newsApi: NewsApi) : NewsRepository {
+class NewsRepositoryImpl(private val newsApi: NewsApi) : NewsRepository {
     override fun getNews(sources: List<String>): Flow<PagingData<Article>> {
         return Pager(
             config = PagingConfig(pageSize = 10),
