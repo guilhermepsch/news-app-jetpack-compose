@@ -47,7 +47,7 @@ fun DetailsTopBar(
             }
         },
         actions = {
-            IconButton(onClick = onShareClick) {
+            IconButton(onClick = onBookmarkClick) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_bookmark),
                     contentDescription = null
