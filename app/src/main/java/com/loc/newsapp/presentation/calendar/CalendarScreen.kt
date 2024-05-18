@@ -28,7 +28,7 @@ fun CalendarScreen(
             .statusBarsPadding()
     ) {
         CalendarBar(
-            text = state.searchQuery,
+            text = state.from,
             readOnly = false,
             onValueChange = { event(CalendarEvent.UpdateSearchQuery(it)) },
             onSearch = { event(CalendarEvent.SearchNews) },

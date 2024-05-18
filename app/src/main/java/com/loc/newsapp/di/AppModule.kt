@@ -13,6 +13,7 @@ import com.loc.newsapp.domain.repository.NewsRepository
 import com.loc.newsapp.domain.usecases.app_entry.AppEntryUseCases
 import com.loc.newsapp.domain.usecases.app_entry.ReadAppEntry
 import com.loc.newsapp.domain.usecases.app_entry.SaveAppEntry
+import com.loc.newsapp.domain.usecases.news.CalendarNews
 import com.loc.newsapp.domain.usecases.news.DeleteArticle
 import com.loc.newsapp.domain.usecases.news.GetNews
 import com.loc.newsapp.domain.usecases.news.NewsUseCases
@@ -72,6 +73,7 @@ object AppModule {
         return NewsUseCases(
             getNews = GetNews(newsRepository),
             searchNews = SearchNews(newsRepository),
+            calendarNews = CalendarNews(newsRepository),
             upsertArticle = UpsertArticle(newsRepository),
             deleteArticle = DeleteArticle(newsRepository),
             selectArticles = SelectArticles(newsRepository),

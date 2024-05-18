@@ -20,7 +20,7 @@ class CalendarViewModel @Inject constructor(
     fun onEvent(event: CalendarEvent) {
         when (event) {
             is CalendarEvent.UpdateSearchQuery -> {
-                _state.value = state.value.copy(searchQuery = event.searchQuery)
+                _state.value = state.value.copy(from = event.from)
             }
 
             is CalendarEvent.SearchNews -> {
@@ -30,8 +30,8 @@ class CalendarViewModel @Inject constructor(
     }
 
     private fun searchNews() {
-        val articles = newsUseCases.searchNews(
-            searchQuery = state.value.searchQuery,
+        val articles = newsUseCases.calendarNews(
+            from = state.value.from,
             sources = listOf("bbc-news", "abc-news", "al-jazeera-english")
         ).cachedIn(viewModelScope)
         _state.value = state.value.copy(articles = articles)
