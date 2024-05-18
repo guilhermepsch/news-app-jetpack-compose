@@ -11,18 +11,18 @@ data class Page(
 
 val pages = listOf<Page>(
     Page(
-        "Lorem ipsum is simply dummy",
-        "Lorem ipsum is simply dummy text of the printing and typesetting inddustry",
+        "O seu aplicativo de notícias favorito",
+        "Encontre rapidamente as notícias que deseja ler, pesquisando por título ou explorando o calendário de publicações.",
         R.drawable.onboarding1
     ),
     Page(
-        "Lorem ipsum is simply dummy",
-        "Lorem ipsum is simply dummy text of the printing and typesetting inddustry",
+        "Salve suas notícias",
+        "Com o Saber+, você pode marcar suas notícias favoritas para ler mais tarde, seja no ônibus, no trabalho ou em casa.",
         R.drawable.onboarding2
     ),
     Page(
-        "Lorem ipsum is simply dummy",
-        "Lorem ipsum is simply dummy text of the printing and typesetting inddustry",
+        "Compartilhe e visualize facilmente",
+        "Compartilhe notícias interessantes com seus amigos e familiares e visualize-as de forma rápida e conveniente.",
         R.drawable.onboarding3
-    ),
+    )
 )

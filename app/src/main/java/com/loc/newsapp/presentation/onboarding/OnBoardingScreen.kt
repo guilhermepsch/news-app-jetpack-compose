@@ -1,7 +1,9 @@
 package com.loc.newsapp.presentation.onboarding
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -12,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
@@ -40,12 +43,13 @@ fun OnBoardingScreen(
         val buttonState = remember {
             derivedStateOf {
                 when (pagerState.currentPage) {
-                    0 -> listOf("", "Next")
-                    1 -> listOf("Back", "Next")
-                    2 -> listOf("Back", "Get Started")
+                    0 -> listOf("", "Próximo")
+                    1 -> listOf("Voltar", "Próximo")
+                    2 -> listOf("Voltar", "Vamos começar!")
                     else -> listOf("", "")
                 }
             }
+
         }
 
         HorizontalPager(state = pagerState) { index ->

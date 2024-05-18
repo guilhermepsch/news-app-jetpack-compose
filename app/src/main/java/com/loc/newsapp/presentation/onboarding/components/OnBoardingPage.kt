@@ -39,13 +39,13 @@ fun OnBoardingPage(modifier: Modifier = Modifier, page: Page) {
             text = page.title,
             modifier = Modifier.padding(horizontal = Dimens.MediumPadding2),
             style = MaterialTheme.typography.displaySmall.copy(fontWeight = FontWeight.Bold),
-            color = colorResource(id = R.color.display_small)
+            color = MaterialTheme.colorScheme.primary
         )
         Text(
             text = page.description,
             modifier = Modifier.padding(horizontal = Dimens.MediumPadding2),
             style = MaterialTheme.typography.bodyMedium,
-            color = colorResource(id = R.color.text_medium)
+            color = MaterialTheme.colorScheme.secondary
         )
     }
 }

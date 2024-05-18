@@ -1,5 +1,7 @@
 package com.loc.newsapp.presentation.common
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -15,6 +17,7 @@ import com.loc.newsapp.domain.model.Article
 import com.loc.newsapp.presentation.Dimens.ExtraSmallPadding2
 import com.loc.newsapp.presentation.Dimens.MediumPadding1
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun ArticlesList(
     modifier: Modifier = Modifier,

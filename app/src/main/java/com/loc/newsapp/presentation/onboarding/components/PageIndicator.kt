@@ -21,7 +21,7 @@ fun PageIndicator(
     pageSize: Int,
     selectedPage: Int,
     selectedColor: Color = MaterialTheme.colorScheme.primary,
-    unselectedColor: Color = BlueGray
+    unselectedColor: Color = MaterialTheme.colorScheme.secondary
 ) {
     Row(modifier = modifier, horizontalArrangement = Arrangement.SpaceBetween) {
         repeat(pageSize) { page ->

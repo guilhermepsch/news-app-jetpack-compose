@@ -1,5 +1,6 @@
 package com.loc.newsapp.data.repository
 
+import android.util.Log
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
@@ -59,6 +60,7 @@ class NewsRepositoryImpl(private val newsApi: NewsApi, private val newsDao: News
     }
 
     override suspend fun deleteArticle(article: Article) {
+        Log.e("test", article.toString())
         newsDao.delete(article)
     }
 

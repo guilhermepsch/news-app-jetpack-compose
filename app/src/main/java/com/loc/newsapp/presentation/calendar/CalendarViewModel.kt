@@ -32,7 +32,7 @@ class CalendarViewModel @Inject constructor(
     private fun searchNews() {
         val articles = newsUseCases.calendarNews(
             from = state.value.from,
-            sources = listOf("bbc-news", "abc-news", "al-jazeera-english")
+            sources = listOf("bbc-news", "abc-news")
         ).cachedIn(viewModelScope)
         _state.value = state.value.copy(articles = articles)
     }

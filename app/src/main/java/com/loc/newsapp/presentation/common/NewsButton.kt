@@ -16,7 +16,7 @@ import com.loc.newsapp.ui.theme.WhiteGray
 fun NewsButton(text: String, onClick: () -> Unit) {
     Button(
         onClick = onClick, colors = ButtonDefaults.buttonColors(
-            containerColor = MaterialTheme.colorScheme.primary, contentColor = Color.White
+            containerColor = MaterialTheme.colorScheme.secondary, contentColor = Color.White
         ), shape = RoundedCornerShape(size = 6.dp)
     ) {
         Text(
