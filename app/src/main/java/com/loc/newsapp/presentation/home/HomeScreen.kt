@@ -2,6 +2,7 @@ package com.loc.newsapp.presentation.home
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -16,7 +17,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -39,17 +42,6 @@ fun HomeScreen(
     navigateToDetails: (Article) -> Unit
 ) {
 
-    val titles by remember {
-        derivedStateOf {
-            if (articles.itemCount > 10) {
-                articles.itemSnapshotList.items.slice(IntRange(start = 0, endInclusive = 9))
-                    .joinToString(separator = " \uD83d\uDFE5") { it.title }
-            } else {
-                ""
-            }
-        }
-    }
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -57,12 +49,12 @@ fun HomeScreen(
             .statusBarsPadding()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.ic_logo),
+            painter = painterResource(id = R.drawable.logo),
             contentDescription = null,
             modifier = Modifier
                 .width(150.dp)
                 .height(30.dp)
-                .padding(horizontal = MediumPadding1)
+                .padding(horizontal = MediumPadding1).align(Alignment.CenterHorizontally)
         )
 
         Spacer(modifier = Modifier.height(MediumPadding1))
@@ -72,17 +64,6 @@ fun HomeScreen(
             onValueChange = {},
             onClick = { navigateToSearch() },
             onSearch = {})
-        Spacer(modifier = Modifier.height(MediumPadding1))
-
-        Text(
-            text = titles,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = MediumPadding1)
-                .basicMarquee(),
-            fontSize = 12.sp,
-            color = colorResource(id = R.color.placeholder)
-        )
 
         Spacer(modifier = Modifier.height(MediumPadding1))
 

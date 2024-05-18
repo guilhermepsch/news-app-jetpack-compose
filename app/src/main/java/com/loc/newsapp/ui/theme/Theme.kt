@@ -10,24 +10,27 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.LinearGradient
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
-    background = Black,
-    primary = Blue,
-    error = DarkRed,
-    surface = LightBlack
+    background = Color(0xFF3E2D8F),
+    primary = Color.White,
+    error = LightRed,
+    surface = Color(0xFF3E2D8F),
 )
 
 private val LightColorScheme = lightColorScheme(
-    background = Color.White,
-    primary = Blue,
+    background = Color(0xFF3E2D8F),
+    primary = Color.White,
     error = LightRed,
-    surface = Color.White
+    surface = Color(0xFF3E2D8F),
 )
 
 @Composable

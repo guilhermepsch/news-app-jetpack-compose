@@ -16,6 +16,7 @@ import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -47,14 +48,12 @@ fun NewsBottomNavigation(
                             modifier = Modifier.size(IconSize)
                         )
                     }
-                    Spacer(modifier = Modifier.height(ExtraSmallPadding2))
-                    Text(text = item.text, style = MaterialTheme.typography.labelSmall)
                 },
                 colors = NavigationBarItemDefaults.colors(
                     selectedIconColor = MaterialTheme.colorScheme.primary,
                     selectedTextColor = MaterialTheme.colorScheme.primary,
-                    unselectedIconColor = colorResource(id = R.color.body),
-                    unselectedTextColor = colorResource(id = R.color.body),
+                    unselectedIconColor = Color.White,
+                    unselectedTextColor = Color.White,
                     indicatorColor = MaterialTheme.colorScheme.background
                 )
             )
@@ -64,5 +63,4 @@ fun NewsBottomNavigation(
 
 data class BottomNavigationItem(
     @DrawableRes val icon: Int,
-    val text: String
 )
