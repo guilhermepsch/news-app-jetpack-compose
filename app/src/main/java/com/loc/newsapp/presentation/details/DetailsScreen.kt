@@ -87,17 +87,12 @@ fun DetailsScreen(
                 Text(
                     text = article.title,
                     style = MaterialTheme.typography.displaySmall,
-                    color = colorResource(
-                        id = R.color.text_title
-                    )
+                    color = MaterialTheme.colorScheme.primary
                 )
-
                 Text(
                     text = article.content,
                     style = MaterialTheme.typography.bodyMedium,
-                    color = colorResource(
-                        id = R.color.body
-                    )
+                    color = MaterialTheme.colorScheme.primary
                 )
             }
         }

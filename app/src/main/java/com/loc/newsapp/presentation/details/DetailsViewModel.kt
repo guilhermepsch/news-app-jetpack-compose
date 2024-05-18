@@ -36,11 +36,11 @@ class DetailsViewModel @Inject constructor(private val newsUseCases: NewsUseCase
 
     private suspend fun upsertArticle(article: Article) {
         newsUseCases.upsertArticle(article)
-        sideEffect = "Article Saved"
+        sideEffect = "Notícia salva nos Favoritos"
     }
 
     private suspend fun deleteArticle(article: Article) {
         newsUseCases.upsertArticle(article)
-        sideEffect = "Article Deleted"
+        sideEffect = "Notícia removida dos Favoritos"
     }
 }
