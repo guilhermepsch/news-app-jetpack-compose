@@ -1,5 +1,6 @@
 package com.loc.newsapp.presentation.news_navigator.components
 
+import android.util.Log
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

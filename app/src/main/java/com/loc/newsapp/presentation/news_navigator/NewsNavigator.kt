@@ -24,6 +24,8 @@ import com.loc.newsapp.R
 import com.loc.newsapp.domain.model.Article
 import com.loc.newsapp.presentation.bookmark.BookmarkScreen
 import com.loc.newsapp.presentation.bookmark.BookmarkViewModel
+import com.loc.newsapp.presentation.calendar.CalendarScreen
+import com.loc.newsapp.presentation.calendar.CalendarViewModel
 import com.loc.newsapp.presentation.details.DetailsEvent
 import com.loc.newsapp.presentation.details.DetailsScreen
 import com.loc.newsapp.presentation.details.DetailsViewModel
@@ -55,7 +57,7 @@ fun NewsNavigator() {
     selectedItem = remember(key1 = backStackState) {
         when (backStackState?.destination?.route) {
             Route.HomeScreen.route -> 0
-            Route.SearchScreen.route -> 1
+            Route.CalendarScreen.route -> 1
             Route.BookmarkScreen.route -> 2
             else -> 0
         }
@@ -63,6 +65,7 @@ fun NewsNavigator() {
 
     val isBottomBarVisible = remember(key1 = backStackState) {
         backStackState?.destination?.route == Route.HomeScreen.route ||
+                backStackState?.destination?.route == Route.CalendarScreen.route ||
                 backStackState?.destination?.route == Route.SearchScreen.route ||
                 backStackState?.destination?.route == Route.BookmarkScreen.route
     }
@@ -81,7 +84,7 @@ fun NewsNavigator() {
 
                         1 -> navigateToTab(
                             navController = navController,
-                            route = Route.SearchScreen.route
+                            route = Route.CalendarScreen.route
                         )
 
                         2 -> navigateToTab(
@@ -142,6 +145,20 @@ fun NewsNavigator() {
                 BookmarkScreen(state = state, navigateToDetails = { article ->
                     navigateToDetails(navController = navController, article = article)
                 })
+            }
+            composable(route = Route.CalendarScreen.route) {
+                val viewModel: CalendarViewModel = hiltViewModel()
+                val state = viewModel.state.value
+                CalendarScreen(
+                    state = state,
+                    event = viewModel::onEvent,
+                    navigateToDetails = { article ->
+                        navigateToDetails(
+                            navController = navController,
+                            article = article
+                        )
+                    }
+                )
             }
         }
 
