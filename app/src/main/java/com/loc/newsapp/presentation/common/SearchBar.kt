@@ -64,7 +64,7 @@ fun SearchBar(
                 Icon(
                     painter = painterResource(id = R.drawable.ic_search),
                     contentDescription = null,
-                    modifier = Modifier.size(IconSize),
+                    modifier = Modifier.size(20.dp),
                     tint = colorResource(id = R.color.body)
                 )
             },
@@ -103,7 +103,7 @@ fun SearchBar(
 fun Modifier.searchBarBorder() = composed {
     if (!isSystemInDarkTheme()) {
         border(
-            width = 1.dp, color = Color.Black, shape = MaterialTheme.shapes.medium
+           color = Color.Transparent, width = 1.dp, shape = MaterialTheme.shapes.extraLarge
         )
     } else {
         this
